@@ -1,0 +1,130 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DataSet1" targetNamespace="http://tempuri.org/DataSet1.xsd" xmlns:mstns="http://tempuri.org/DataSet1.xsd" xmlns="http://tempuri.org/DataSet1.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="ConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="ConnectionString (Settings)" PropertyReference="ApplicationSettings.delo.Properties.Settings.GlobalReference.Default.ConnectionString" Provider="System.Data.OleDb" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="DH225TableAdapter" GeneratorDataComponentClassName="DH225TableAdapter" Name="DH225" UserDataComponentName="DH225TableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="ConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        dbo.DH225.SP234, dbo.DH225.SP226, dbo.DH225.SP962, dbo.SC23.DESCR
+FROM            dbo.DH225 INNER JOIN
+                         dbo.SC23 ON dbo.DH225.SP1510 = dbo.SC23.ID
+WHERE        (dbo.DH225.SP962 &lt; '01.01.1999')</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="SP234" DataSetColumn="SP234" />
+              <Mapping SourceColumn="SP226" DataSetColumn="SP226" />
+              <Mapping SourceColumn="SP962" DataSetColumn="SP962" />
+              <Mapping SourceColumn="DESCR" DataSetColumn="DESCR" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="SC23TableAdapter" GeneratorDataComponentClassName="SC23TableAdapter" Name="SC23" UserDataComponentName="SC23TableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="ConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        TOP 100 PERCENT dd.Expr2, dd.DESCR, ff.Expr1, dd.Expr, ff.Expr AS Expr3, dd.CODE AS Code
+FROM            (SELECT        MAX(_1SCONST.ROW_ID) AS Expr, MAX(_1SCONST.DATE) AS Expr2, SC2.DESCR, SC2.CODE, _1SCONST.OBJID
+                          FROM            _1SCONST INNER JOIN
+                                                    SC2 ON _1SCONST.OBJID = SC2.ID
+                          WHERE        (SC2.PARENTID = '     1   ')
+                          GROUP BY SC2.DESCR, _1SCONST.ID, _1SCONST.OBJID, SC2.CODE
+                          HAVING         (_1SCONST.ID = 1498)) AS dd INNER JOIN
+                             (SELECT        MAX(_1SCONST_1.ROW_ID) AS Expr, MAX(_1SCONST_1.DATE) AS Expr2, SC2_1.DESCR, _1SCONST_1.OBJID, _1SCONST_1.VALUE, 
+                                                         SC23.DESCR AS Expr1
+                               FROM            _1SCONST AS _1SCONST_1 INNER JOIN
+                                                         SC2 AS SC2_1 ON _1SCONST_1.OBJID = SC2_1.ID INNER JOIN
+                                                         SC23 ON _1SCONST_1.VALUE = SC23.ID
+                               GROUP BY SC2_1.DESCR, _1SCONST_1.ID, _1SCONST_1.OBJID, _1SCONST_1.VALUE, SC23.DESCR
+                               HAVING         (_1SCONST_1.ID = 1498)) AS ff ON dd.OBJID = ff.OBJID AND dd.DESCR = ff.DESCR AND dd.Expr2 = ff.Expr2 AND dd.Expr = ff.Expr
+ORDER BY dd.DESCR</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="DESCR" DataSetColumn="DESCR" />
+              <Mapping SourceColumn="Expr2" DataSetColumn="Expr2" />
+              <Mapping SourceColumn="Expr1" DataSetColumn="Expr1" />
+              <Mapping SourceColumn="Expr" DataSetColumn="Expr" />
+              <Mapping SourceColumn="Expr3" DataSetColumn="Expr3" />
+              <Mapping SourceColumn="Code" DataSetColumn="Code" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DataSet1" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="DataSet1" msprop:Generator_UserDSName="DataSet1">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="DH225" msprop:Generator_TableClassName="DH225DataTable" msprop:Generator_TableVarName="tableDH225" msprop:Generator_RowChangedName="DH225RowChanged" msprop:Generator_TablePropName="DH225" msprop:Generator_RowDeletingName="DH225RowDeleting" msprop:Generator_RowChangingName="DH225RowChanging" msprop:Generator_RowEvHandlerName="DH225RowChangeEventHandler" msprop:Generator_RowDeletedName="DH225RowDeleted" msprop:Generator_RowClassName="DH225Row" msprop:Generator_UserTableName="DH225" msprop:Generator_RowEvArgName="DH225RowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="SP234" msprop:Generator_ColumnVarNameInTable="columnSP234" msprop:Generator_ColumnPropNameInRow="SP234" msprop:Generator_ColumnPropNameInTable="SP234Column" msprop:Generator_UserColumnName="SP234" type="xs:decimal" />
+              <xs:element name="SP226" msprop:Generator_ColumnVarNameInTable="columnSP226" msprop:Generator_ColumnPropNameInRow="SP226" msprop:Generator_ColumnPropNameInTable="SP226Column" msprop:Generator_UserColumnName="SP226">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="60" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SP962" msprop:Generator_ColumnVarNameInTable="columnSP962" msprop:Generator_ColumnPropNameInRow="SP962" msprop:Generator_ColumnPropNameInTable="SP962Column" msprop:Generator_UserColumnName="SP962" type="xs:dateTime" />
+              <xs:element name="DESCR" msprop:Generator_ColumnVarNameInTable="columnDESCR" msprop:Generator_ColumnPropNameInRow="DESCR" msprop:Generator_ColumnPropNameInTable="DESCRColumn" msprop:Generator_UserColumnName="DESCR">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="SC23" msprop:Generator_TableClassName="SC23DataTable" msprop:Generator_TableVarName="tableSC23" msprop:Generator_RowChangedName="SC23RowChanged" msprop:Generator_TablePropName="SC23" msprop:Generator_RowDeletingName="SC23RowDeleting" msprop:Generator_RowChangingName="SC23RowChanging" msprop:Generator_RowEvHandlerName="SC23RowChangeEventHandler" msprop:Generator_RowDeletedName="SC23RowDeleted" msprop:Generator_RowClassName="SC23Row" msprop:Generator_UserTableName="SC23" msprop:Generator_RowEvArgName="SC23RowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="DESCR" msprop:Generator_ColumnVarNameInTable="columnDESCR" msprop:Generator_ColumnPropNameInRow="DESCR" msprop:Generator_ColumnPropNameInTable="DESCRColumn" msprop:Generator_UserColumnName="DESCR">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Expr2" msprop:Generator_ColumnVarNameInTable="columnExpr2" msprop:Generator_ColumnPropNameInRow="Expr2" msprop:Generator_ColumnPropNameInTable="Expr2Column" msprop:Generator_UserColumnName="Expr2" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Expr1" msprop:Generator_ColumnVarNameInTable="columnExpr1" msprop:Generator_ColumnPropNameInRow="Expr1" msprop:Generator_ColumnPropNameInTable="Expr1Column" msprop:Generator_UserColumnName="Expr1">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Expr" msprop:Generator_ColumnVarNameInTable="columnExpr" msprop:Generator_ColumnPropNameInRow="Expr" msprop:Generator_ColumnPropNameInTable="ExprColumn" msprop:Generator_UserColumnName="Expr" type="xs:int" minOccurs="0" />
+              <xs:element name="Expr3" msprop:Generator_ColumnVarNameInTable="columnExpr3" msprop:Generator_ColumnPropNameInRow="Expr3" msprop:Generator_ColumnPropNameInTable="Expr3Column" msprop:Generator_UserColumnName="Expr3" type="xs:int" minOccurs="0" />
+              <xs:element name="Code" msprop:Generator_ColumnVarNameInTable="columnCode" msprop:Generator_ColumnPropNameInRow="Code" msprop:Generator_ColumnPropNameInTable="CodeColumn" msprop:Generator_UserColumnName="Code">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="5" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
